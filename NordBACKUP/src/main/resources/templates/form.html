@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <form action="#" th:action="@{/}" th:object="${pointForm}" method="post">
+            <table>
+                <tr>
+                    <td>Length of side A</td>
+                    <td><input type="number" step="0.1" th:field="*{SideA}"/></td>
+                    <td th:if="${fields.hasErrors('SideA')}">Error in side A Length</td>
+                </tr>
+                <tr>
+                    <td>Length of side B</td>
+                    <td><input type="number" step="0.1" th:field="*{SideB}"/></td>
+                    <td th:if="${fields.hasErrors('SideB')}">Error in side B Length</td>
+                </tr>
+                <tr>
+                    <td>Length of side C</td>
+                    <td><input type="number" step="0.1" th:field="*{SideC}"/></td>
+                    <td th:if="${fields.hasErrors('SideC')}">Error in side C Length</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
